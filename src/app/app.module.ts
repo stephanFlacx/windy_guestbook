@@ -8,6 +8,11 @@ import { GuestbookOverviewComponent } from './guestbook-overview/guestbook-overv
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {GuestbookOverviewModule} from './guestbook-overview/guestbook-overview.module';
 import {ApiInterceptor} from './api.interceptor';
+import {GuestbookDetailModule} from './guestbook-detail/guestbook-detail.module';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,13 @@ import {ApiInterceptor} from './api.interceptor';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GuestbookOverviewModule
+    GuestbookOverviewModule,
+    GuestbookDetailModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatCardModule,
+    FlexLayoutModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true}

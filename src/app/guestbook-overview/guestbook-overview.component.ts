@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GuestbookModel} from '../guestbook.model';
+import {GuestbookOverviewModel} from '../guestbook.model';
 import {GuestbookService} from '../guestbook.service';
 
 @Component({
@@ -8,7 +8,7 @@ import {GuestbookService} from '../guestbook.service';
   styleUrls: ['./guestbook-overview.component.scss']
 })
 export class GuestbookOverviewComponent implements OnInit {
-  public guestbookEntries: GuestbookModel[] = [];
+  public guestbookEntries: GuestbookOverviewModel[] = [];
 
   constructor(private guestbookService: GuestbookService) {
   }
@@ -22,6 +22,12 @@ export class GuestbookOverviewComponent implements OnInit {
         });
   }
 
+  getRandomColor(): any {
+    const colors = ['#E3F2FD', '#BBDEFB', '#90CAF9', '#64B5F6', '#42A5F5', '#2196F3'];
+    const randomNumber = Math.floor(Math.random() * colors.length);
+    // console.log(randomNumber);
+    return colors[randomNumber];
+  }
 }
 
 
