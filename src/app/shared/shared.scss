@@ -1,0 +1,5 @@
+@mixin card-border-radius-and-shadow {
+  //border-top: 15px solid;
+  border-radius: 10px;
+  box-shadow: 7px 7px 18px 2px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}

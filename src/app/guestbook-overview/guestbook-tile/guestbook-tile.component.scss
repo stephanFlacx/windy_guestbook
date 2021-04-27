@@ -1,0 +1,15 @@
+@use '~src/app/shared/shared.scss';
+
+.mat-card {
+  @include shared.card-border-radius-and-shadow;
+  border-top: 20px solid;
+  &:hover{
+      box-shadow: 7px 7px 28px 8px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  }
+}
+
+.mat-card-image:first-child{
+  margin-top: -16px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}

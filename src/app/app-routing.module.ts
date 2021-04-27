@@ -5,7 +5,7 @@ import {GuestbookDetailComponent} from './guestbook-detail/guestbook-detail.comp
 
 const routes: Routes = [
   {path: 'overview', component: GuestbookOverviewComponent},
-  {path: 'detail/:myid', component: GuestbookDetailComponent},
+  {path: 'detail/:detailId', component: GuestbookDetailComponent},
   {path: '**', redirectTo: 'overview'}
 ];
 

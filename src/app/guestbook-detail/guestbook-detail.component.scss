@@ -1,6 +1,12 @@
+@use '~src/app/shared/shared.scss';
 
 .content {
   padding-top: 50px;
   padding-left: 30%;
   padding-right: 30%;
+}
+
+
+.mat-card {
+  @include shared.card-border-radius-and-shadow;
 }

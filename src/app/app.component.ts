@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {GuestbookService} from './guestbook.service';
+import {GlobalLoadingService} from './shared/global-loading.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,7 @@ import {GuestbookService} from './guestbook.service';
 })
 export class AppComponent {
   title = 'windy-guestbook';
+
+    constructor(public readonly globalLoadingService: GlobalLoadingService) {
+    }
 }

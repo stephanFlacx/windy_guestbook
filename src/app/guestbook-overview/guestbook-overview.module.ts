@@ -6,11 +6,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { GuestbookTileComponent } from './guestbook-tile/guestbook-tile.component';
 
 
 
 @NgModule({
-  declarations: [GuestbookOverviewComponent],
+  declarations: [GuestbookOverviewComponent, GuestbookTileComponent],
   exports: [
     GuestbookOverviewComponent
   ],

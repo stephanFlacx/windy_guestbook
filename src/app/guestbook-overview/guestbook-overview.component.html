@@ -1,11 +1,7 @@
 <div class="content">
   <div fxLayout="row wrap" fxLayoutGap="20px grid">
       <div fxFlex="25%"  fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let guestbookEntry of guestbookEntries" [routerLink]="'/detail/' + guestbookEntry.id">
-        <mat-card [ngStyle]="{'border-bottom-color': getRandomColor()}">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <mat-card-title>{{guestbookEntry.author}}</mat-card-title>
-          <mat-card-content>{{guestbookEntry.messagePreview}}</mat-card-content>
-        </mat-card>
+          <app-guestbook-tile [guestbookEntryPass]="guestbookEntry"></app-guestbook-tile>
       </div>
   </div>
 </div>
