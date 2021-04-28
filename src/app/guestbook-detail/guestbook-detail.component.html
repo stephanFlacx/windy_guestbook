@@ -1,11 +1,11 @@
 <!--<h1>{{guestbookDetail.author}}</h1>-->
-<div class="content">
+<div *ngIf="guestbookDetail " class="content">
 <!--  <div fxLayout="row wrap" fxLayoutGap="20px grid">-->
 <!--      <div fxFlex="25%"  fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let guestbookEntry of guestbookEntries" [routerLink]="'/detail/' + guestbookEntry.id">-->
         <mat-card>
           <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
           <mat-card-title>dfasfsadfdsf</mat-card-title>
-<!--          <mat-card-content>{{guestbookDetail.message}}</mat-card-content>-->
+          <mat-card-content>{{guestbookDetail.message}}</mat-card-content>
         </mat-card>
 <!--      </div>-->
 <!--  </div>-->

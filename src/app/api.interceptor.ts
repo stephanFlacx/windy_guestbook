@@ -22,7 +22,7 @@ export class ApiInterceptor implements HttpInterceptor {
     setTimeout(() => this.globalLoadingService.isLoading = true);
     return next.handle(request.clone({url: 'http://localhost:8080/' + request.url})).pipe(
             finalize(() => setTimeout(() => this.globalLoadingService.isLoading = false))
-        );;
+        );
   }
 }
 

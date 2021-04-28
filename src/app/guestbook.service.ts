@@ -13,7 +13,7 @@ export class GuestbookService {
     return this.http.get<GuestbookOverviewModel[]>('/posts');
   }
 
-  public  getGuestbookDetail(id: string): Observable<GuestbookDetailModel[]>{
-    return this.http.get<GuestbookDetailModel[]>('posts/${id}');
+  public  getGuestbookDetail(id: string): Observable<GuestbookDetailModel>{
+    return this.http.get<GuestbookDetailModel>(`posts/${id}`);
   }
 }

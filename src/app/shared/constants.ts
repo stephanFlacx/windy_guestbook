@@ -1,1 +1,1 @@
-export const detailIdParam = 'myId';
+export const detailIdParam = 'detailId';
