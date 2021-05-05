@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {GuestbookDetailModel} from '../guestbook.model';
-import {GuestbookService} from '../guestbook.service';
+import {GuestbookDetailModel} from '../shared/guestbook.model';
+import {GuestbookService} from '../shared/guestbook.service';
 import {detailIdParam} from '../shared/constants';
 
 @Component({

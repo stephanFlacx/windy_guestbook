@@ -12,6 +12,7 @@ import {GuestbookDetailModule} from './guestbook-detail/guestbook-detail.module'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
@@ -28,6 +29,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatToolbarModule,
     MatGridListModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     FlexLayoutModule
   ],
   providers: [

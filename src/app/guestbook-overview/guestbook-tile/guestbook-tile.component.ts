@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {GuestbookOverviewModel} from '../../guestbook.model';
+import {GuestbookOverviewModel} from '../../shared/guestbook.model';
+import {RandomColorService} from '../../shared/random-color.service';
 
 @Component({
   selector: 'app-guestbook-tile',
@@ -11,15 +12,9 @@ export class GuestbookTileComponent implements OnInit {
   @Input()
   public guestbookEntryPass!: GuestbookOverviewModel;
 
-  constructor() { }
+  constructor(public randomColorService: RandomColorService) { }
 
   ngOnInit(): void {
   }
 
-  getRandomColor(): any {
-    const colors = ['#E3F2FD', '#BBDEFB', '#90CAF9', '#64B5F6', '#42A5F5', '#2196F3'];
-    const randomNumber = Math.floor(Math.random() * colors.length);
-    // console.log(randomNumber);
-    return colors[randomNumber];
-  }
 }
