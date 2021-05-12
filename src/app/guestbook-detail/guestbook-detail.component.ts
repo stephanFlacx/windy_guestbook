@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {GuestbookDetailModel} from '../shared/guestbook.model';
-import {GuestbookService} from '../shared/guestbook.service';
+import {GuestbookDetailModel} from '../models/guestbook.model';
+import {GuestbookService} from '../services/guestbook.service';
 import {detailIdParam} from '../shared/constants';
 
 @Component({
@@ -23,10 +23,7 @@ export class GuestbookDetailComponent implements OnInit {
     this.guestbookService.getGuestbookDetail(detailId)
         .subscribe((guestbookDetail) => {
           this.guestbookDetail = guestbookDetail;
-          console.log('==================');
-          console.log('got everything!');
           console.log(this.guestbookService);
-          console.log('==================');
         });  }
 
 }

@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <h1 [routerLink]="'/overview/'">Windy Guestbook</h1>
+  <div class="login-group">
+    <div *ngIf="!(authService.loggedInUserName$ | async)" >
+      <p class="login-status">You are not logged in</p>
+      <button mat-raised-button [routerLink]="'/login/'">Login</button>
+    </div>
+    <div *ngIf="(authService.loggedInUserName$ | async)" >
+      <p class="login-status">You are logged in as {{(authService.loggedInUserName$ | async)}}</p>
+      <button mat-raised-button (click)="authService.logout()">Logout</button>
+    </div>
+  </div>
+</mat-toolbar>

@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, AfterContentInit} from '@angular/core';
-import {GuestbookOverviewModel} from '../../shared/guestbook.model';
-import {RandomColorService} from '../../shared/random-color.service';
-import {RandomImagePathService} from '../../shared/random-image-path.service';
+import {GuestbookOverviewModel} from '../../models/guestbook.model';
+import {RandomColorService} from '../../services/random-color.service';
+import {RandomImagePathService} from '../../services/random-image-path.service';
 
 @Component({
   selector: 'app-guestbook-tile',

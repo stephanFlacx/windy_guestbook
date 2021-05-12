@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {GuestbookOverviewModel} from '../shared/guestbook.model';
-import {GuestbookService} from '../shared/guestbook.service';
+import {GuestbookOverviewModel} from '../models/guestbook.model';
+import {GuestbookService} from '../services/guestbook.service';
 
 @Component({
   selector: 'app-guestbook-overview',

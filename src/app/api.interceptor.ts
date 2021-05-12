@@ -6,7 +6,7 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {GlobalLoadingService} from './shared/global-loading.service';
+import {GlobalLoadingService} from './services/global-loading.service';
 import {finalize} from 'rxjs/operators';
 
 @Injectable()

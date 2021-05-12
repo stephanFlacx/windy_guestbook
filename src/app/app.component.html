@@ -1,6 +1,4 @@
-<mat-toolbar>
-  <h1>Windy Guestbook</h1>
-</mat-toolbar>
+<app-banner></app-banner>
 
 <router-outlet [class.hide]="globalLoadingService.isLoading$ | async"></router-outlet>
 <div *ngIf="globalLoadingService.isLoading$ | async" class="loading-container">

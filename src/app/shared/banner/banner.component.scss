@@ -1,0 +1,24 @@
+.mat-toolbar{
+  height: 15vh;
+  background-color: gray;
+  justify-content: space-between;
+}
+
+h1{
+  font-size: xxx-large;
+  color: white;
+  cursor: pointer;
+ }
+
+.login-status{
+  color: white;
+  font-size: medium;
+}
+
+.login-group{
+  //flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  //margin-left: auto;
+  //margin-right: 0;
+}

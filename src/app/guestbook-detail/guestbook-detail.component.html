@@ -3,9 +3,12 @@
 <!--  <div fxLayout="row wrap" fxLayoutGap="20px grid">-->
 <!--      <div fxFlex="25%"  fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let guestbookEntry of guestbookEntries" [routerLink]="'/detail/' + guestbookEntry.id">-->
         <mat-card>
-          <img mat-card-image src="../../assets/windsurf_pictures/ws_jh_001.jpg" alt="Photo of a Shiba Inu">
+          <img mat-card-image src="../../assets/windsurf_pictures/ws_jh_001.jpg">
           <mat-card-title>dfasfsadfdsf</mat-card-title>
-          <mat-card-content>{{guestbookDetail.message}}</mat-card-content>
+          <mat-card-content>
+            <div>{{guestbookDetail.message}}</div>
+            <mat-icon matBadge="15" matBadgeColor="warn">thumb_up</mat-icon>
+          </mat-card-content>
         </mat-card>
 <!--      </div>-->
 <!--  </div>-->

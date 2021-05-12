@@ -14,10 +14,18 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { LoginComponent } from './login/login/login.component';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import { BannerComponent } from './shared/banner/banner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +38,11 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatGridListModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true}
