@@ -18,3 +18,12 @@ export interface GuestbookDetailModel {
   ];
   message: string;
 }
+
+export interface GuestbookPostNewEntryModel {
+  author: string;
+  message: string;
+}
+
+export interface GuestbookClaps {
+    claps: number;
+}

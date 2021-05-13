@@ -1,12 +1,16 @@
 @use '~src/app/shared/shared.scss';
 
-.content {
-  padding-top: 50px;
-  padding-left: 30%;
-  padding-right: 30%;
-}
+.clap-group {
+  display: flex;
+  flex-direction:row;
+  align-items: flex-end;
 
+  .clap-icon {
+    cursor: pointer;
+  }
 
-.mat-card {
-  @include shared.card-border-radius-and-shadow;
+  .clap-number {
+    padding-left: 5px;
+    font-size: medium;
+  }
 }

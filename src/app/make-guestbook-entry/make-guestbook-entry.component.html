@@ -1,0 +1,24 @@
+<div class="content">
+  <mat-card>
+    <img mat-card-image src="../assets/windsurf_pictures/ws_jh_001.jpg">
+    <mat-card-title>New guestbook entry</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" class="form-group">
+          <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput [formControlName]="formConstants.author">
+<!--              <mat-error *ngIf="isTitleAlreadyUsed()">-->
+<!--                  Title is already in use-->
+<!--              </mat-error>-->
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>Tell your story...</mat-label>
+              <textarea matInput rows="5"  [formControlName]="formConstants.message"></textarea>
+          </mat-form-field>
+      </form>
+      <button mat-stroked-button (click)="publishEntry()" [disabled]="form.invalid">Post</button>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+

@@ -1,5 +1,6 @@
 <mat-toolbar>
   <h1 [routerLink]="'/overview/'">Windy Guestbook</h1>
+  <button mat-raised-button [routerLink]="'/newEntry/'">Write new guestbook entry</button>
   <div class="login-group">
     <div *ngIf="!(authService.loggedInUserName$ | async)" >
       <p class="login-status">You are not logged in</p>
