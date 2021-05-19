@@ -16,13 +16,9 @@ export class GuestbookOverviewComponent implements OnInit {
   public ngOnInit(): void {
     this.guestbookService.getGuestbookEntries()
         .subscribe((guestbookEntries) => {
-          console.log('got everything!');
-          console.log(this.guestbookEntries);
           this.guestbookEntries = guestbookEntries;
         });
   }
-
-
 }
 
 

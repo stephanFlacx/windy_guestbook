@@ -1,15 +1,16 @@
-.content {
-//:host{
-  padding-top: 50px;
-  padding-left: 200px;
-  padding-right: 200px;
-}
+@use '~src/app/shared/shared.scss';
+
+//.content {
+//  padding-top: 50px;
+//  padding-left: 200px;
+//  padding-right: 200px;
+//}
 
 div {
   cursor: pointer;
 }
 
-mat-grid-list {
-  margin-left: 200px;
-  margin-right: 200px;
+.add-button{
+  background-color: #2196F3;
+  font-size: xx-large;
 }

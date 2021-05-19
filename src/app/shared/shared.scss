@@ -4,12 +4,37 @@
 }
 $padding-card: 20px;
 
-.content {
+.common-layout{
   padding-top: 50px;
-  padding-left: 30%;
-  padding-right: 30%;
-  padding-bottom: 10%;
+  display: grid;
+  grid-template-columns:10% 80% 10%;
+  grid-column-gap: 10px;
+
+  .side-bar {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  .content {
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    .single-center-card{
+      padding-left: 30%;
+      padding-right: 30%;
+    }
+
+  }
 }
+//.content {
+//  padding-top: 50px;
+//  padding-left: 30%;
+//  padding-right: 30%;
+//  padding-bottom: 10%;
+//}
 
 .mat-card {
   @include card-border-radius-and-shadow;

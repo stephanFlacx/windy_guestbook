@@ -1,22 +1,26 @@
-<div *ngIf="guestbookDetail" class="content">
-  <mat-card class="main-card">
-    <img mat-card-image src="../../assets/windsurf_pictures/ws_jh_001.jpg">
-    <mat-card-title>{{guestbookDetail.author}}</mat-card-title>
-    <mat-card-content>
-      <p>{{guestbookDetail.message}}</p>
-      <div class="clap-group">
-        <img class="clap-icon" src="../assets/clap-icon.svg" height="32px" (click)="addClap()">
-        <p class="clap-number">{{guestbookDetail.claps}}</p>
-      </div>
-    </mat-card-content>
-  </mat-card>
+<div class="common-layout">
+  <div class="content">
+    <div *ngIf="guestbookDetail" class="single-center-card">
+      <mat-card class="main-card">
+        <img mat-card-image src="../../assets/windsurf_pictures/ws_jh_001.jpg">
+        <mat-card-title>{{guestbookDetail.author}}</mat-card-title>
+        <mat-card-content>
+          <p>{{guestbookDetail.message}}</p>
+          <div class="clap-group">
+            <img class="clap-icon" src="../assets/clap-icon.svg" height="32px" (click)="addClap()">
+            <p class="clap-number">{{guestbookDetail.claps}}</p>
+          </div>
+        </mat-card-content>
+      </mat-card>
 
-  <mat-card *ngFor="let comment of guestbookDetail.comments" class="comment-card">
-    <mat-card-content class="comment-card-content">
-      <p>{{comment.date | date: 'dd.MM.yyyy HH.mm'}} | {{comment.author}}</p>
-      <p>{{comment.comment}}</p>
-    </mat-card-content>
-  </mat-card>
+      <mat-card *ngFor="let comment of guestbookDetail.comments" class="comment-card">
+        <mat-card-content class="comment-card-content">
+          <p>{{comment.date | date: 'dd.MM.yyyy HH.mm'}} | {{comment.author}}</p>
+          <p>{{comment.comment}}</p>
+        </mat-card-content>
+      </mat-card>
 
-  <app-add-comment></app-add-comment>
+      <app-add-comment [detailId]="detailId"></app-add-comment>
+    </div>
+  </div>
 </div>

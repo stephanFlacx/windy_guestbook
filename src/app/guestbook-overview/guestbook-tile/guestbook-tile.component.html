@@ -1,7 +1,14 @@
-<mat-card [ngStyle]="{'border-top-color': topColor}">
-<!--  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
-<!--  <img mat-card-image src="../../assets/windsurf_pictures/ws_jh_001.jpg" alt="Photo of a Shiba Inu">-->
+<mat-card [ngStyle]="{'border-top-color': topColor}"  class="main-card">
   <img mat-card-image src="{{imagePath}}">
   <mat-card-title>{{guestbookEntryPass.author}}</mat-card-title>
-  <mat-card-content>{{guestbookEntryPass.messagePreview}}</mat-card-content>
+  <mat-card-content>
+    <p>{{guestbookEntryPass.messagePreview}}</p>
+    <img class="trash-icon" src="../assets/trash-icon.svg" height="24px" [matMenuTriggerFor]="dropDown" (click)="$event.stopPropagation()">
+    <mat-menu #dropDown="matMenu" xPosition="before">
+      <div class="dropdown">
+        <p>Do you really want to delete this entry?</p>
+         <button mat-raised-button color="warn" (click)="deleteEntry()">Delete permanently</button>
+      </div>
+    </mat-menu>
+  </mat-card-content>
 </mat-card>

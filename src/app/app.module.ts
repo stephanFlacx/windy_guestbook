@@ -14,6 +14,7 @@ import {LoginModule} from './login/login/login.module';
 import {MakeGuestbookEntryModule} from './make-guestbook-entry/make-guestbook-entry.module';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
+    MatButtonModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true}
