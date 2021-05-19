@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {GuestbookDetailModel,
-        GuestbookOverviewModel,
-        GuestbookPostNewEntryModel,
-        GuestbookCommentModel,
-        GuestbookClaps} from '../models/guestbook.model';
+import {GuestbookDetailModel, GuestbookOverviewModel, GuestbookPostNewEntryModel, GuestbookClaps} from '../models/guestbook.model';
 import {AuthenticationService} from './authentication.service';
 
 @Injectable({
@@ -28,16 +24,6 @@ export class GuestbookService {
   public postGuestbookEntry(entry: GuestbookPostNewEntryModel): Observable<void> {
       const headers = this.authService.getSessionTokenHeader();
       return this.http.post<void>('/posts', entry, {headers});
-  }
-
-  public deleteGuestbookEntry(id: string): Observable<void> {
-      const headers = this.authService.getSessionTokenHeader();
-      return this.http.delete<void>(`posts/${id}`, {headers});
-  }
-
-  public postGuestbookComment(id: string, comment: GuestbookCommentModel): Observable<void> {
-      const headers = this.authService.getSessionTokenHeader();
-      return this.http.post<void>(`posts/${id}/comments`, comment, {headers});
   }
 
   public putClap(id: string, claps: GuestbookClaps): Observable<void> {

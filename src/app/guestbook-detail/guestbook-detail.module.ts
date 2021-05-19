@@ -4,7 +4,6 @@ import { GuestbookDetailComponent } from './guestbook-detail.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
-import {MatButtonModule} from '@angular/material/button';
 import {AddCommentModule} from '../shared/add-comment/add-comment.module';
 
 @NgModule({
@@ -17,7 +16,6 @@ import {AddCommentModule} from '../shared/add-comment/add-comment.module';
     MatCardModule,
     MatIconModule,
     MatBadgeModule,
-    MatButtonModule,
     AddCommentModule,
   ]
 })

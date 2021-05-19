@@ -13,17 +13,3 @@
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
-
-.trash-icon {
-  &:hover {
-    transform: scale(1.5);
-  }
-}
-
-.dropdown {
-  padding-left: 10px;
-  padding-right: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}

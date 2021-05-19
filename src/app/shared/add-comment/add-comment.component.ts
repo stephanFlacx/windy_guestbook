@@ -1,9 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {GuestbookService} from '../../services/guestbook.service';
 import {Router} from '@angular/router';
-import {AuthenticationService} from '../../services/authentication.service';
-
 // import {blogTitleValidator} from './blog-title.validator';
 
 @Component({
@@ -12,45 +10,36 @@ import {AuthenticationService} from '../../services/authentication.service';
   styleUrls: ['./add-comment.component.scss']
 })
 export class AddCommentComponent implements OnInit {
-
-    @Input()
-    public detailId!: string;
-
     public readonly formConstants = {
-        author: 'author',
-        comment: 'comment'
+        title: 'title',
+        content: 'content'
     };
 
     public form: FormGroup = this.fb.group({
-        [this.formConstants.author]: ['', {
+        [this.formConstants.title]: ['', {
             validators: [Validators.required, Validators.minLength(3)],
             // asyncValidators: blogTitleValidator(this.guestbookService),
             updateOn: 'blur'
         }],
-        [this.formConstants.comment]: ['', Validators.required]
+        [this.formConstants.content]: ['', Validators.required]
     });
 
     constructor(
         private readonly fb: FormBuilder,
         private readonly guestbookService: GuestbookService,
-        private readonly router: Router,
-        public readonly authService: AuthenticationService
+        private readonly router: Router
     ) {
     }
 
     ngOnInit(): void {
+        this.form.valueChanges.subscribe(value => console.log(value));
     }
 
-    publishComment(): void {
-      const currentUrl = this.router.url;
-      this.guestbookService.postGuestbookComment(this.detailId, this.form.value).subscribe(
-        // reload page after clap had been send
-        () => this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-          this.router.navigate([currentUrl]);
-        }));
+    publishBlog(): void {
+        // this.guestbookService.postBlogEntry(this.form.value).subscribe(() => this.router.navigate(['/']));
     }
 
-    // isTitleAlreadyUsed(): boolean | undefined {
-    //     return this.form.get(this.formConstants.title)?.hasError('titleAlreadyUsed');
-    // }
+    isTitleAlreadyUsed(): boolean | undefined {
+        return this.form.get(this.formConstants.title)?.hasError('titleAlreadyUsed');
+    }
 }

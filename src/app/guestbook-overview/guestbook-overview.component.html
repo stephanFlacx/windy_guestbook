@@ -1,15 +1,18 @@
-<div class="common-layout">
-  <div class="side-bar">
-    <button mat-fab class="add-button"[routerLink]="'/newEntry'">+</button>
-  </div>
-  <div class="content">
-    <div fxLayout="row wrap" fxLayoutGap="20px grid">
-        <div fxFlex="25%"  fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let guestbookEntry of guestbookEntries" [routerLink]="'/detail/' + guestbookEntry.id">
-            <app-guestbook-tile (entryDeleted)='ngOnInit()' [guestbookEntryPass]="guestbookEntry" [detailIdPass]="guestbookEntry.id + ''"></app-guestbook-tile>
-        </div>
-    </div>
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="20px grid">
+      <div fxFlex="25%"  fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let guestbookEntry of guestbookEntries" [routerLink]="'/detail/' + guestbookEntry.id">
+          <app-guestbook-tile [guestbookEntryPass]="guestbookEntry"></app-guestbook-tile>
+      </div>
   </div>
 </div>
 
+<!--<mat-grid-list cols="2">-->
+<!--  <mat-grid-tile *ngFor="let guestbookEntry of guestbookEntries" [routerLink]="'/detail/' + guestbookEntry.id">-->
+<!--    <mat-card>-->
+<!--      <mat-card-title>{{guestbookEntry.author}}</mat-card-title>-->
+<!--      <mat-card-content>{{guestbookEntry.messagePreview}}</mat-card-content>-->
+<!--    </mat-card>-->
+<!--  </mat-grid-tile>-->
+<!--</mat-grid-list>-->
 
 

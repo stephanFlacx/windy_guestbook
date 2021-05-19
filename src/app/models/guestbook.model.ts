@@ -24,12 +24,6 @@ export interface GuestbookPostNewEntryModel {
   message: string;
 }
 
-export interface GuestbookCommentModel {
-  author: string;
-  comment: string;
-}
-
-
 export interface GuestbookClaps {
     claps: number;
 }

@@ -1,9 +1,7 @@
-import {Component, Input, OnInit, AfterContentInit, Output, EventEmitter} from '@angular/core';
+import {Component, Input, OnInit, AfterContentInit} from '@angular/core';
 import {GuestbookOverviewModel} from '../../models/guestbook.model';
 import {RandomColorService} from '../../services/random-color.service';
 import {RandomImagePathService} from '../../services/random-image-path.service';
-import {GuestbookService} from '../../services/guestbook.service';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-guestbook-tile',
@@ -17,17 +15,9 @@ export class GuestbookTileComponent implements OnInit, AfterContentInit {
   @Input()
   public guestbookEntryPass!: GuestbookOverviewModel;
 
-  @Input()
-  public detailIdPass!: string;
-
-  @Output()
-  public entryDeleted = new EventEmitter();
-
   constructor(
     public randomColorService: RandomColorService,
-    public randomImagePathService: RandomImagePathService,
-    private readonly guestbookService: GuestbookService,
-    private readonly router: Router
+    public randomImagePathService: RandomImagePathService
   ) { }
 
   ngOnInit(): void {}
@@ -38,12 +28,5 @@ export class GuestbookTileComponent implements OnInit, AfterContentInit {
     console.log(stringNumber);
     this.topColor = this.randomColorService.getColor();
     this.imagePath = this.randomImagePathService.getPath();
-  }
-
-  deleteEntry(): void{
-    const currentUrl = this.router.url;
-    this.guestbookService.deleteGuestbookEntry(this.detailIdPass).subscribe(() => window.location.reload());
-    // console.log(currentUrl);
-    this.entryDeleted.emit();
   }
 }
