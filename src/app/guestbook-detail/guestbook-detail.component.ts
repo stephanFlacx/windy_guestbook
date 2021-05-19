@@ -13,6 +13,7 @@ import {Router} from '@angular/router';
 export class GuestbookDetailComponent implements OnInit {
   public guestbookDetail: GuestbookDetailModel | undefined;
   public readonly guestbookClaps: GuestbookClaps = {claps: 1};
+  public detailId!: string;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
@@ -21,9 +22,9 @@ export class GuestbookDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const detailId = this.activatedRoute.snapshot.params[detailIdParam];
-    console.log(detailId);
-    this.guestbookService.getGuestbookDetail(detailId)
+    this.detailId = this.activatedRoute.snapshot.params[detailIdParam];
+    console.log(this.detailId);
+    this.guestbookService.getGuestbookDetail(this.detailId)
         .subscribe((guestbookDetail) => {
           this.guestbookDetail = guestbookDetail;
           console.log(this.guestbookService);
@@ -32,10 +33,6 @@ export class GuestbookDetailComponent implements OnInit {
   addClap(): void{
     const detailId = this.activatedRoute.snapshot.params[detailIdParam];
     const currentUrl = this.router.url;
-    this.guestbookService.putClap(detailId, this.guestbookClaps).subscribe(
-      // reload page after clap had been send
-      () => this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-        this.router.navigate([currentUrl]);
-      }));
+    this.guestbookService.putClap(detailId, this.guestbookClaps).subscribe(() => this.ngOnInit());
   }
 }

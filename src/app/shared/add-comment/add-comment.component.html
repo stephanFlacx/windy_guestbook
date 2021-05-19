@@ -1,17 +1,24 @@
 <mat-card class="comment-card">
+<!--  loggedInUserNameSubject$-->
   <mat-card-content class="comment-card-content">
-    <form [formGroup]="form" class="form-group">
-        <mat-form-field>
-            <mat-label>Title</mat-label>
-            <input matInput [formControlName]="formConstants.title">
-            <mat-error *ngIf="isTitleAlreadyUsed()">
-                Title is already in use
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Tell your story...</mat-label>
-            <textarea matInput [mat-autosize]="true" [formControlName]="formConstants.content"></textarea>
-        </mat-form-field>
-    </form>
+    <div *ngIf="(authService.loggedInUserName$ | async)" >
+      <form [formGroup]="form" class="form-group">
+          <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput [formControlName]="formConstants.author">
+  <!--            <mat-error *ngIf="isTitleAlreadyUsed()">-->
+  <!--                Title is already in use-->
+  <!--            </mat-error>-->
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>Comment</mat-label>
+              <textarea matInput [mat-autosize]="true" [formControlName]="formConstants.comment"></textarea>
+          </mat-form-field>
+      </form>
+      <button mat-stroked-button (click)="publishComment()" [disabled]="form.invalid">Post</button>
+    </div>
+    <div *ngIf="!(authService.loggedInUserName$ | async)">
+      Login to add a comment
+    </div>
   </mat-card-content>
 </mat-card>
