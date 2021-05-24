@@ -6,7 +6,7 @@
       <button mat-raised-button [routerLink]="'/login/'">Login</button>
     </div>
     <div *ngIf="(authService.loggedInUserName$ | async)" >
-      <p class="login-status">You are logged in as {{(authService.loggedInUserName$ | async)}}</p>
+      <p class="login-status" i18n>You are logged in as {{(authService.loggedInUserName$ | async)}}</p>
       <button mat-raised-button (click)="authService.logout()">Logout</button>
     </div>
   </div>

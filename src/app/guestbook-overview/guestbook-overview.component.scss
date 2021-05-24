@@ -1,10 +1,21 @@
 @use '~src/app/shared/shared.scss';
+@use '~src/app/shared/util.scss';
 
-//.content {
-//  padding-top: 50px;
-//  padding-left: 200px;
-//  padding-right: 200px;
-//}
+
+.card-holder {
+  display: grid;
+  justify-content: space-between;
+  @include util.small-up {
+    grid-template-columns: repeat(auto-fill, 100%);
+  }
+  @include util.medium-up {
+    grid-template-columns: repeat(auto-fill, 49%);
+  }
+  @include util.large-up {
+    grid-template-columns: repeat(auto-fill, 24%);
+  }
+}
+
 
 div {
   cursor: pointer;
@@ -14,3 +25,4 @@ div {
   background-color: #2196F3;
   font-size: xx-large;
 }
+

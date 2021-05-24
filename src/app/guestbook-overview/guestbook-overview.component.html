@@ -2,9 +2,10 @@
   <div class="side-bar">
     <button mat-fab class="add-button"[routerLink]="'/newEntry'">+</button>
   </div>
+
   <div class="content">
-    <div fxLayout="row wrap" fxLayoutGap="20px grid">
-        <div fxFlex="25%"  fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let guestbookEntry of guestbookEntries" [routerLink]="'/detail/' + guestbookEntry.id">
+    <div class="card-holder">
+        <div class="single-card" *ngFor="let guestbookEntry of guestbookEntries" [routerLink]="'/detail/' + guestbookEntry.id">
             <app-guestbook-tile (entryDeleted)='ngOnInit()' [guestbookEntryPass]="guestbookEntry" [detailIdPass]="guestbookEntry.id + ''"></app-guestbook-tile>
         </div>
     </div>
