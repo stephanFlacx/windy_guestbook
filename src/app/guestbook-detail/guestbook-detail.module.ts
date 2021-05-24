@@ -6,6 +6,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatButtonModule} from '@angular/material/button';
 import {AddCommentModule} from '../shared/add-comment/add-comment.module';
+import {Routes, RouterModule} from '@angular/router';
+
+const routes: Routes = [
+  {path: '', component: GuestbookDetailComponent},
+];
 
 @NgModule({
   declarations: [GuestbookDetailComponent],
@@ -19,6 +24,7 @@ import {AddCommentModule} from '../shared/add-comment/add-comment.module';
     MatBadgeModule,
     MatButtonModule,
     AddCommentModule,
+    RouterModule.forChild(routes)
   ]
 })
 export class GuestbookDetailModule { }
