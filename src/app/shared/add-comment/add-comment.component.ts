@@ -1,10 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {GuestbookService} from '../../services/guestbook.service';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../../services/authentication.service';
 
-// import {blogTitleValidator} from './blog-title.validator';
+
 
 @Component({
   selector: 'app-add-comment',
@@ -19,15 +19,26 @@ export class AddCommentComponent implements OnInit {
     public readonly formConstants = {
         author: 'author',
         comment: 'comment'
-    };
+    }
+
+    authorForm = new FormControl(  '', {
+            validators: [Validators.required, Validators.minLength(3)],
+            updateOn: 'blur'
+        });
+
+    commentForm = new FormControl('', {
+            validators: [Validators.required, Validators.minLength(15)],
+            updateOn: 'blur'});
 
     public form: FormGroup = this.fb.group({
-        [this.formConstants.author]: ['', {
-            validators: [Validators.required, Validators.minLength(3)],
-            // asyncValidators: blogTitleValidator(this.guestbookService),
-            updateOn: 'blur'
-        }],
-        [this.formConstants.comment]: ['', Validators.required]
+        // [this.formConstants.author]: ['', {
+        //     validators: [Validators.required, Validators.minLength(3)],
+        //     // asyncValidators: blogTitleValidator(this.guestbookService),
+        //     updateOn: 'blur'
+        // }],
+        // [this.formConstants.comment]: ['', Validators.required]
+        [this.formConstants.author]: this.authorForm,
+        [this.formConstants.comment]: this.commentForm
     });
 
     constructor(
@@ -49,8 +60,4 @@ export class AddCommentComponent implements OnInit {
           this.router.navigate([currentUrl]);
         }));
     }
-
-    // isTitleAlreadyUsed(): boolean | undefined {
-    //     return this.form.get(this.formConstants.title)?.hasError('titleAlreadyUsed');
-    // }
 }

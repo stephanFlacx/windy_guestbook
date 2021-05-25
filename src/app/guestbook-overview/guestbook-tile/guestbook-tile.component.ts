@@ -3,7 +3,7 @@ import {GuestbookOverviewModel} from '../../models/guestbook.model';
 import {RandomColorService} from '../../services/random-color.service';
 import {RandomImagePathService} from '../../services/random-image-path.service';
 import {GuestbookService} from '../../services/guestbook.service';
-import {Router} from '@angular/router';
+import {AuthenticationService} from '../../services/authentication.service';
 
 @Component({
   selector: 'app-guestbook-tile',
@@ -27,7 +27,7 @@ export class GuestbookTileComponent implements OnInit, AfterContentInit {
     public randomColorService: RandomColorService,
     public randomImagePathService: RandomImagePathService,
     private readonly guestbookService: GuestbookService,
-    private readonly router: Router
+    public readonly authService: AuthenticationService,
   ) { }
 
   ngOnInit(): void {}
@@ -41,9 +41,7 @@ export class GuestbookTileComponent implements OnInit, AfterContentInit {
   }
 
   deleteEntry(): void{
-    const currentUrl = this.router.url;
     this.guestbookService.deleteGuestbookEntry(this.detailIdPass).subscribe(() => window.location.reload());
-    // console.log(currentUrl);
     this.entryDeleted.emit();
   }
 }

@@ -1,26 +1,71 @@
+@use '../util.scss';
+
 .mat-toolbar{
-  height: 15vh;
-  background-color: gray;
+    @include util.medium-down {
+      height: 90px;
+    }
+    @include util.medium-up {
+      height: 110px;
+    }
+    @include util.large-up {
+      height: 130px;
+    }
+  background: linear-gradient(to right, #00467F 0%, #A5CC82 100%);
   justify-content: space-between;
   box-shadow: 7px 7px 18px 2px rgb(0 0 0 / 30%);
-
-  //box-shadow: 10px 10px 5px silver;
 }
 
-h1{
-  font-size: xxx-large;
+.logo-group{
+  margin-left: 30px;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 20px;
+  place-items: center;
+
+  h1{
   color: white;
   cursor: pointer;
- }
+  }
 
-.login-status{
-  color: white;
-  font-size: medium;
+  @include util.medium-down {
+    column-gap: 5px;
+    h1 {
+      font-size: x-large;
+    }
+    img {
+      height: 80px;
+    }
+  }
+  @include util.medium-up {
+    column-gap: 10px;
+    h1 {
+      font-size: xx-large;
+    }
+    img {
+      height: 100px;
+    }
+  }
+  @include util.large-up {
+    column-gap: 20px;
+    h1 {
+      font-size: xxx-large;
+    }
+    img {
+      height: 120px;
+    }
+  }
 }
 
+
 .login-group{
-  flex-flow: row wrap;
-  justify-content: flex-end;
+  margin-right: 30px;
+  display: grid;
+  grid-row: 1;
+
+  p {
+    font-size: medium;
+    color: white;
+  }
 }
 
 footer{

@@ -1,13 +1,18 @@
 <mat-toolbar>
-  <h1 [routerLink]="'/'">Windy Guestbook</h1>
-  <div class="login-group">
-    <div *ngIf="!(authService.loggedInUserName$ | async)" >
-      <p class="login-status">You are logged out</p>
-      <button mat-raised-button [routerLink]="'/login/'">Login</button>
-    </div>
-    <div *ngIf="(authService.loggedInUserName$ | async)" >
-      <p class="login-status" i18n>You are logged in as {{(authService.loggedInUserName$ | async)}}</p>
-      <button mat-raised-button (click)="authService.logout()">Logout</button>
-    </div>
+  <div class="logo-group" [routerLink]="'/'">
+    <img src="../../assets/windsurfing-silhouette.svg">
+    <h1>Windy Guestbook</h1>
   </div>
+    <div class="login-group" *ngIf="!(authService.loggedInUserName$ | async)">
+      <p>You are logged out</p>
+      <button mat-raised-button [routerLink]="'/login/'">
+        <img src="../../assets/login-icon.svg" height="20px">
+      </button>
+    </div>
+    <div class="login-group" *ngIf="(authService.loggedInUserName$ | async)">
+      <p i18n>You are logged in as {{(authService.loggedInUserName$ | async)}}</p>
+        <button mat-raised-button  (click)="authService.logout()">
+          <img src="../../assets/logout-icon.svg" height="20px">
+        </button>
+    </div>
 </mat-toolbar>

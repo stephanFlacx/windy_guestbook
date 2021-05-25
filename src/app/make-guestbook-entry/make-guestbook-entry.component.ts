@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {GuestbookService} from '../services/guestbook.service';
 import {Router} from '@angular/router';
 
@@ -14,19 +14,23 @@ export class MakeGuestbookEntryComponent implements OnInit {
         message: 'message'
     };
 
-    public form: FormGroup = this.fb.group({
-        [this.formConstants.author]: ['', {
+    authorForm = new FormControl(  '', {
             validators: [Validators.required, Validators.minLength(3)],
-            // asyncValidators: blogTitleValidator(this.guestbookService),
             updateOn: 'blur'
-        }],
-        [this.formConstants.message]: ['', Validators.required],
+        });
+
+    messageForm = new FormControl('', {
+            validators: [Validators.required, Validators.minLength(15)],
+            updateOn: 'blur'});
+
+    public form: FormGroup = this.fb.group({
+        [this.formConstants.author]: this.authorForm,
+        [this.formConstants.message]: this.messageForm
     });
 
     constructor(
         private readonly fb: FormBuilder,
         private readonly guestbookService: GuestbookService,
-        private readonly router: Router
     ) {
     }
 
@@ -37,8 +41,4 @@ export class MakeGuestbookEntryComponent implements OnInit {
     publishEntry(): void {
         this.guestbookService.postGuestbookEntry(this.form.value).subscribe();
     }
-
-    // isTitleAlreadyUsed(): boolean | undefined {
-    //     return this.form.get(this.formConstants.title)?.hasError('titleAlreadyUsed');
-    // }
 }

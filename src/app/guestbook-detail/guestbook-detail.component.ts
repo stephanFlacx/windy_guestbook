@@ -18,7 +18,6 @@ export class GuestbookDetailComponent implements OnInit {
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly guestbookService: GuestbookService,
-    private readonly router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +31,6 @@ export class GuestbookDetailComponent implements OnInit {
 
   addClap(): void{
     const detailId = this.activatedRoute.snapshot.params[detailIdParam];
-    const currentUrl = this.router.url;
     this.guestbookService.putClap(detailId, this.guestbookClaps).subscribe(() => this.ngOnInit());
   }
 }

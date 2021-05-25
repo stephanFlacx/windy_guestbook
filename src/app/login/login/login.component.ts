@@ -30,7 +30,7 @@ export class LoginComponent {
     public onFormSubmit(): void {
         this.globalLoadingService.isLoading = true;
 
-        if (this.isRegistered) {
+        // if (this.isRegistered) {
             this.authService.login(this.user)
                 .pipe(
                     finalize(() => this.globalLoadingService.isLoading = false)
@@ -40,16 +40,6 @@ export class LoginComponent {
                 }, () => {
                     this.globalError = 'We couldn’t find an account matching the username and password you entered. Please check your username and password and try again.';
                 });
-        } else {
-            this.authService.registerUser(this.user)
-                .pipe(
-                    concatMap(() => this.authService.login(this.user)),
-                    finalize(() => this.globalLoadingService.isLoading = false)
-                )
-                .subscribe(() => {
-                    this.router.navigate(['/']);
-                });
-        }
     }
 
     public onRegistrationLoginSwitch(): void {

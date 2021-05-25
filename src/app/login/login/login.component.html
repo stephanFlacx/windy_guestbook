@@ -1,37 +1,32 @@
-<!--<div *ngIf="globalError" class="global-error">-->
-<!--    {{globalError}}-->
-<!--</div>-->
 
+<div class="common-layout">
+  <div class="content">
+    <mat-card class="login-card">
+      <mat-card-content class="login-card-content">
+        <img mat-card-image src="../../assets/windsurf_pictures/ws_jh_login.jpg">
 
-<div class="content">
-  <mat-card class="login-card">
-    <mat-card-content class="login-card-content">
-      <img mat-card-image src="../../assets/windsurf_pictures/ws_jh_login.jpg">
+            <form (ngSubmit)="onFormSubmit()" #form="ngForm">
+                <h1 *ngIf="isRegistered">Sign in to the<br>Windy Guestbook</h1>
+                <h1 *ngIf="!isRegistered">Sign up to the<br>Windy Guestbook</h1>
 
-          <form (ngSubmit)="onFormSubmit()" #form="ngForm">
-              <h1 *ngIf="isRegistered">Sign in to the<br>Windy Guestbook</h1>
-              <h1 *ngIf="!isRegistered">Sign up to the<br>Windy Guestbook</h1>
+                <mat-form-field>
+                    <mat-label>User Name</mat-label>
+                    <input required name="user" matInput type="text" [(ngModel)]="user.username" #myUsernameVariable="ngModel">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input required name="password" matInput type="password" [(ngModel)]="user.password" #password="ngModel">
+                </mat-form-field>
 
-              <mat-form-field>
-                  <mat-label>User Name</mat-label>
-                  <input required name="user" matInput type="text" [(ngModel)]="user.username" #myUsernameVariable="ngModel">
-              </mat-form-field>
-              <mat-form-field>
-                  <mat-label>Password</mat-label>
-                  <input required name="password" matInput type="password" [(ngModel)]="user.password" #password="ngModel">
-              </mat-form-field>
+                <button *ngIf="isRegistered" type="submit" mat-raised-button [disabled]="form.invalid">
+                  Login
+                </button>
+              <div *ngIf="globalError" class="global-error">
+                  {{globalError}}
+              </div>
+            </form>
 
-              <a *ngIf="isRegistered" (click)="onRegistrationLoginSwitch()">Not a member? Sign up now</a>
-              <a *ngIf="!isRegistered" (click)="onRegistrationLoginSwitch()">Already a member? Sign In</a>
-
-              <button *ngIf="isRegistered" type="submit" mat-raised-button [disabled]="form.invalid">
-                Login
-              </button>
-              <button *ngIf="!isRegistered" type="submit" mat-raised-button [disabled]="myUsernameVariable.invalid || password.invalid">
-                  Create Account
-              </button>
-          </form>
-
-    </mat-card-content>
-</mat-card>
+      </mat-card-content>
+  </mat-card>
+  </div>
 </div>
