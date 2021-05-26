@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {GuestbookOverviewComponent} from './guestbook-overview/guestbook-overview.component';
-import {GuestbookDetailComponent} from './guestbook-detail/guestbook-detail.component';
-import {GuestbookDetailModule} from './guestbook-detail/guestbook-detail.module';
 import {LoginComponent} from './login/login/login.component';
 import {MakeGuestbookEntryComponent} from './make-guestbook-entry/make-guestbook-entry.component';
+import {UserListComponent} from './user-list/user-list.component';
 import {AuthGuard} from './shared/auth.guard';
 
 const routes: Routes = [
@@ -13,6 +12,7 @@ const routes: Routes = [
       .then(m => m.GuestbookDetailModule)},
   {path: 'login', component: LoginComponent},
   {path: 'newEntry', component: MakeGuestbookEntryComponent, canActivate: [AuthGuard]},
+  {path: 'userList', component: UserListComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: 'overview'}
 ];
 

@@ -3,7 +3,6 @@ import {ActivatedRoute} from '@angular/router';
 import {GuestbookClaps, GuestbookDetailModel} from '../models/guestbook.model';
 import {GuestbookService} from '../services/guestbook.service';
 import {detailIdParam} from '../shared/constants';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-guestbook-detail',

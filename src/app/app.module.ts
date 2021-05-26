@@ -15,6 +15,7 @@ import {MakeGuestbookEntryModule} from './make-guestbook-entry/make-guestbook-en
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from '@angular/material/button';
+import {UserListModule} from './user-list/user-list.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {MatButtonModule} from '@angular/material/button';
     AddCommentModule,
     LoginModule,
     MakeGuestbookEntryModule,
+    UserListModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatProgressSpinnerModule,

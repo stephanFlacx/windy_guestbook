@@ -5,7 +5,8 @@ import {GuestbookDetailModel,
         GuestbookOverviewModel,
         GuestbookPostNewEntryModel,
         GuestbookCommentModel,
-        GuestbookClaps} from '../models/guestbook.model';
+        GuestbookClaps,
+        GuestbookUsers} from '../models/guestbook.model';
 import {AuthenticationService} from './authentication.service';
 
 @Injectable({
@@ -42,5 +43,10 @@ export class GuestbookService {
 
   public putClap(id: string, claps: GuestbookClaps): Observable<void> {
       return this.http.put<void>(`posts/${id}/clap`, claps);
+  }
+
+  public getGuestbookUsers(): Observable<GuestbookUsers[]> {
+    const headers = this.authService.getSessionTokenHeader();
+    return this.http.get<GuestbookUsers[]>('/users', {headers});
   }
 }

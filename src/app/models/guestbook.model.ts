@@ -29,7 +29,11 @@ export interface GuestbookCommentModel {
   comment: string;
 }
 
-
 export interface GuestbookClaps {
-    claps: number;
+  claps: number;
+}
+
+export interface GuestbookUsers {
+  name: string;
+  role: string;
 }
