@@ -1,18 +1,18 @@
 <mat-toolbar>
   <div class="logo-group" [routerLink]="'/'">
-    <img src="../../assets/windsurfing-silhouette.svg">
+    <img src="assets/windsurfing-silhouette.svg">
     <h1>Windy Guestbook</h1>
   </div>
     <div class="login-group" *ngIf="!(authService.loggedInUserName$ | async)">
-      <p>You are logged out</p>
+      <p i18n>You are logged out</p>
       <button mat-raised-button [routerLink]="'/login/'">
-        <img src="../../assets/login-icon.svg" height="20px">
+        <img src="assets/login-icon.svg" height="20px">
       </button>
     </div>
     <div class="login-group" *ngIf="(authService.loggedInUserName$ | async)">
       <p i18n>You are logged in as {{(authService.loggedInUserName$ | async)}}</p>
         <button mat-raised-button  (click)="authService.logout()">
-          <img src="../../assets/logout-icon.svg" height="20px">
+          <img src="assets/logout-icon.svg" height="20px">
         </button>
     </div>
 </mat-toolbar>

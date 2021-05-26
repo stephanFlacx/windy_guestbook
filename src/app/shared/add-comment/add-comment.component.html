@@ -1,20 +1,19 @@
 <mat-card class="comment-card">
-<!--  loggedInUserNameSubject$-->
   <mat-card-content class="comment-card-content">
     <div *ngIf="(authService.loggedInUserName$ | async)" >
       <form [formGroup]="form" class="form-group">
           <mat-form-field>
               <mat-label>Name</mat-label>
               <input matInput [formControlName]="formConstants.author">
-                  <mat-error class="error-msg" *ngIf="authorForm.invalid">This field requires at least 3 characters.</mat-error>
+                  <mat-error i18n class="error-msg" *ngIf="authorForm.invalid">This field requires at least 3 characters.</mat-error>
           </mat-form-field>
           <mat-form-field>
-              <mat-label>Comment</mat-label>
+              <mat-label i18n>Comment</mat-label>
               <textarea matInput [mat-autosize]="true" [formControlName]="formConstants.comment"></textarea>
-                <mat-error class="error-msg" *ngIf="authorForm.invalid">This field requires at least 15 characters.</mat-error>
+                <mat-error i18n class="error-msg" *ngIf="authorForm.invalid">This field requires at least 15 characters.</mat-error>
           </mat-form-field>
       </form>
-      <button mat-stroked-button (click)="publishComment()" [disabled]="form.invalid">Post</button>
+      <button i18n mat-stroked-button (click)="publishComment()" [disabled]="form.invalid">Post</button>
     </div>
     <div *ngIf="!(authService.loggedInUserName$ | async)">
       Login to add a comment

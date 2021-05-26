@@ -1,14 +1,14 @@
 <mat-card [ngStyle]="{'border-top-color': topColor}"  class="main-card">
-  <img mat-card-image src="{{imagePath}}">
+  <img mat-card-image src="assets/windsurf_pictures/{{imageFilename}}">
   <mat-card-title>{{guestbookEntryPass.author}}</mat-card-title>
   <mat-card-content>
     <p>{{guestbookEntryPass.messagePreview}}</p>
     <div *ngIf="(authService.loggedInUserName$ | async)">
-      <img class="trash-icon" src="../assets/trash-icon.svg" height="24px" [matMenuTriggerFor]="dropDown" (click)="$event.stopPropagation()">
+      <img class="trash-icon" src="assets/trash-icon.svg" height="24px" [matMenuTriggerFor]="dropDown" (click)="$event.stopPropagation()">
       <mat-menu #dropDown="matMenu" xPosition="before">
         <div class="dropdown">
-          <p>Do you really want to delete this entry?</p>
-           <button mat-raised-button color="warn" (click)="deleteEntry()">Delete permanently</button>
+          <p i18n>Do you really want to delete this entry?</p>
+           <button i18n mat-raised-button color="warn" (click)="deleteEntry()">Delete permanently</button>
         </div>
       </mat-menu>
     </div>

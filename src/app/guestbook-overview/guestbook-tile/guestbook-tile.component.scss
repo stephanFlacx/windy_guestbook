@@ -1,4 +1,4 @@
-@use '~src/app/shared/shared.scss';
+@use 'src/styles/shared';
 
 .mat-card {
   @include shared.card-border-radius-and-shadow;

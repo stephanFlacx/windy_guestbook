@@ -2,22 +2,22 @@
   <div class="content">
     <div class="single-center-card">
       <mat-card>
-        <img mat-card-image src="../assets/windsurf_pictures/ws_jh_001.jpg">
-        <mat-card-title>New guestbook entry</mat-card-title>
+        <img mat-card-image src="assets/windsurf_pictures/ws_jh_001.jpg">
+        <mat-card-title i18n>New guestbook entry</mat-card-title>
         <mat-card-content>
           <form [formGroup]="form" class="form-group">
               <mat-form-field>
                   <mat-label>Name</mat-label>
                   <input matInput [formControlName]="formConstants.author">
-                  <mat-error *ngIf="authorForm.invalid">This field requires at least 3 characters.</mat-error>
+                  <mat-error i18n *ngIf="authorForm.invalid">This field requires at least 3 characters.</mat-error>
               </mat-form-field>
               <mat-form-field>
-                  <mat-label>What's up</mat-label>
+                  <mat-label i18n>What's up</mat-label>
                   <textarea matInput rows="5"  [formControlName]="formConstants.message"></textarea>
-                  <mat-error class="error-msg" *ngIf="messageForm.invalid">This field requires at least 15 characters.</mat-error>
+                  <mat-error i18n class="error-msg" *ngIf="messageForm.invalid">This field requires at least 15 characters.</mat-error>
               </mat-form-field>
           </form>
-          <button mat-stroked-button (click)="publishEntry()" [disabled]="form.invalid">Post</button>
+          <button i18n mat-stroked-button (click)="publishEntry()" [disabled]="form.invalid">Post</button>
         </mat-card-content>
       </mat-card>
     </div>

@@ -3,7 +3,7 @@ import {GlobalLoadingService} from '../../services/global-loading.service';
 import {Router} from '@angular/router';
 import {User} from '../../models/user.model';
 import {AuthenticationService} from '../../services/authentication.service';
-import {finalize, switchMap, concatMap} from 'rxjs/operators';
+import {finalize} from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -29,27 +29,14 @@ export class LoginComponent {
 
     public onFormSubmit(): void {
         this.globalLoadingService.isLoading = true;
-
-        // if (this.isRegistered) {
-            this.authService.login(this.user)
-                .pipe(
-                    finalize(() => this.globalLoadingService.isLoading = false)
-                )
-                .subscribe(() => {
-                    this.router.navigate(['/']);
-                }, () => {
-                    this.globalError = 'We couldn’t find an account matching the username and password you entered. Please check your username and password and try again.';
-                });
+        this.authService.login(this.user)
+            .pipe(
+                finalize(() => this.globalLoadingService.isLoading = false)
+            )
+            .subscribe(() => {
+                this.router.navigate(['/']);
+            }, () => {
+                this.globalError = 'We couldn’t find an account matching the username and password you entered. Please check your username and password and try again.';
+            });
     }
-
-    public onRegistrationLoginSwitch(): void {
-        this.isRegistered = !this.isRegistered;
-        this.user = {
-            username: '',
-            password: ''
-        };
-        this.globalError = undefined;
-    }
-
-
 }

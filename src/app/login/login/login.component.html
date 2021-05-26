@@ -3,18 +3,18 @@
   <div class="content">
     <mat-card class="login-card">
       <mat-card-content class="login-card-content">
-        <img mat-card-image src="../../assets/windsurf_pictures/ws_jh_login.jpg">
+        <img mat-card-image src="assets/windsurf_pictures/ws_jh_login.jpg">
 
             <form (ngSubmit)="onFormSubmit()" #form="ngForm">
-                <h1 *ngIf="isRegistered">Sign in to the<br>Windy Guestbook</h1>
-                <h1 *ngIf="!isRegistered">Sign up to the<br>Windy Guestbook</h1>
+                <h1 i18n *ngIf="isRegistered">Sign in to the<br>Windy Guestbook</h1>
+<!--                <h1 *ngIf="!isRegistered">Sign up to the<br>Windy Guestbook</h1>-->
 
                 <mat-form-field>
-                    <mat-label>User Name</mat-label>
+                    <mat-label i18n>User Name</mat-label>
                     <input required name="user" matInput type="text" [(ngModel)]="user.username" #myUsernameVariable="ngModel">
                 </mat-form-field>
                 <mat-form-field>
-                    <mat-label>Password</mat-label>
+                    <mat-label i18n>Password</mat-label>
                     <input required name="password" matInput type="password" [(ngModel)]="user.password" #password="ngModel">
                 </mat-form-field>
 

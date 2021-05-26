@@ -1,4 +1,4 @@
-@use '../util.scss';
+@use 'src/styles/util';
 
 .mat-toolbar{
     @include util.medium-down {
@@ -21,10 +21,10 @@
   grid-auto-flow: column;
   column-gap: 20px;
   place-items: center;
+  cursor: pointer;
 
   h1{
   color: white;
-  cursor: pointer;
   }
 
   @include util.medium-down {

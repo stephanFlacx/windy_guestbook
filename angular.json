@@ -31,7 +31,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "localize": false,
+            "localize": ["en-US", "de"],
             "aot": true,
             "assets": [
               "src/favicon.ico",

@@ -12,7 +12,7 @@ import {AuthenticationService} from '../../services/authentication.service';
 })
 export class GuestbookTileComponent implements OnInit, AfterContentInit {
   public topColor = '#FFFFFF';
-  public imagePath = '';
+  public imageFilename = '';
 
   @Input()
   public guestbookEntryPass!: GuestbookOverviewModel;
@@ -37,7 +37,7 @@ export class GuestbookTileComponent implements OnInit, AfterContentInit {
     const stringNumber = randomNumber.toString().padStart(3, '0');
     console.log(stringNumber);
     this.topColor = this.randomColorService.getColor();
-    this.imagePath = this.randomImagePathService.getPath();
+    this.imageFilename = this.randomImagePathService.getFilename();
   }
 
   deleteEntry(): void{

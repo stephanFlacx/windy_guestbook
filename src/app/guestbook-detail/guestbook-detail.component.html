@@ -2,12 +2,12 @@
   <div class="content">
     <div *ngIf="guestbookDetail" class="single-center-card">
       <mat-card class="main-card">
-        <img mat-card-image src="../../assets/windsurf_pictures/ws_jh_001.jpg">
+        <img mat-card-image src="assets/windsurf_pictures/ws_jh_001.jpg">
         <mat-card-title>{{guestbookDetail.author}}</mat-card-title>
         <mat-card-content>
           <p>{{guestbookDetail.message}}</p>
           <div class="clap-group">
-            <img class="clap-icon" src="../assets/clap-icon.svg" height="32px" (click)="addClap()">
+            <img class="clap-icon" src="assets/clap-icon.svg" height="32px" (click)="addClap()">
             <p class="clap-number">{{guestbookDetail.claps}}</p>
           </div>
         </mat-card-content>
