@@ -9,8 +9,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {GuestbookOverviewModule} from './guestbook-overview/guestbook-overview.module';
 import {ApiInterceptor} from './api.interceptor';
 import {GuestbookDetailModule} from './guestbook-detail/guestbook-detail.module';
-import {AddCommentModule} from './shared/add-comment/add-comment.module';
-import {LoginModule} from './login/login/login.module';
+import {LoginModule} from './login/login.module';
 import {MakeGuestbookEntryModule} from './make-guestbook-entry/make-guestbook-entry.module';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -28,7 +27,6 @@ import {UserListModule} from './user-list/user-list.module';
     HttpClientModule,
     GuestbookOverviewModule,
     GuestbookDetailModule,
-    AddCommentModule,
     LoginModule,
     MakeGuestbookEntryModule,
     UserListModule,

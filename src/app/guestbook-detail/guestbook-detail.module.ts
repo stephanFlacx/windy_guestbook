@@ -5,15 +5,17 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatButtonModule} from '@angular/material/button';
-import {AddCommentModule} from '../shared/add-comment/add-comment.module';
 import {Routes, RouterModule} from '@angular/router';
+import {AddCommentComponent} from './add-comment/add-comment.component';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {path: '', component: GuestbookDetailComponent},
 ];
 
 @NgModule({
-  declarations: [GuestbookDetailComponent],
+  declarations: [GuestbookDetailComponent, AddCommentComponent],
     exports: [
         GuestbookDetailComponent
     ],
@@ -23,7 +25,9 @@ const routes: Routes = [
     MatIconModule,
     MatBadgeModule,
     MatButtonModule,
-    AddCommentModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ]
 })

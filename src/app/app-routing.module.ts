@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {GuestbookOverviewComponent} from './guestbook-overview/guestbook-overview.component';
-import {LoginComponent} from './login/login/login.component';
+import {LoginComponent} from './login/login.component';
 import {MakeGuestbookEntryComponent} from './make-guestbook-entry/make-guestbook-entry.component';
 import {UserListComponent} from './user-list/user-list.component';
 import {AuthGuard} from './shared/auth.guard';

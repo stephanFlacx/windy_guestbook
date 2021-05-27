@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {GlobalLoadingService} from '../../services/global-loading.service';
+import {GlobalLoadingService} from '../services/global-loading.service';
 import {Router} from '@angular/router';
-import {User} from '../../models/user.model';
-import {AuthenticationService} from '../../services/authentication.service';
+import {User} from '../models/user.model';
+import {AuthenticationService} from '../services/authentication.service';
 import {finalize} from 'rxjs/operators';
 
 @Component({
