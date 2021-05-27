@@ -2,6 +2,57 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="7000830892812873748" datatype="html">
+        <source>Dieses Feld erfordert mindestens 3 Zeichen.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/guestbook-detail/add-comment/add-comment.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-guestbook-entry/make-guestbook-entry.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2662644497259948010" datatype="html">
+        <source>Kommentar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/guestbook-detail/add-comment/add-comment.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3813471178939554617" datatype="html">
+        <source>Dieses Feld erfordert mindestens 15 Zeichen.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/guestbook-detail/add-comment/add-comment.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-guestbook-entry/make-guestbook-entry.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8386493650739116899" datatype="html">
+        <source>Posten</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/guestbook-detail/add-comment/add-comment.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/make-guestbook-entry/make-guestbook-entry.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7556907890092537814" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/post-add-icon.svg&quot;&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/guestbook-overview/guestbook-overview.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/guestbook-overview/guestbook-overview.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="4017021986631923345" datatype="html">
         <source>Willst du diesen Beitrag wirklich löschen?</source>
         <context-group purpose="location">
@@ -19,22 +70,22 @@
       <trans-unit id="2360866869826760343" datatype="html">
         <source>Einloggen ins<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>Windy Guestbook</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="160640128319879431" datatype="html">
         <source>Benutzername</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1431416938026210429" datatype="html">
         <source>Passwort</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2037930380718877606" datatype="html">
@@ -44,51 +95,11 @@
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7000830892812873748" datatype="html">
-        <source>Dieses Feld erfordert mindestens 3 Zeichen.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/make-guestbook-entry/make-guestbook-entry.component.html</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/add-comment/add-comment.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="164014001263938145" datatype="html">
         <source>Was geht</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/make-guestbook-entry/make-guestbook-entry.component.html</context>
           <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3813471178939554617" datatype="html">
-        <source>Dieses Feld erfordert mindestens 15 Zeichen.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/make-guestbook-entry/make-guestbook-entry.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/add-comment/add-comment.component.html</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="8386493650739116899" datatype="html">
-        <source>Posten</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/make-guestbook-entry/make-guestbook-entry.component.html</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/add-comment/add-comment.component.html</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2662644497259948010" datatype="html">
-        <source>Kommentar</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/add-comment/add-comment.component.html</context>
-          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="791329202609488932" datatype="html">
@@ -103,6 +114,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/banner/banner.component.html</context>
           <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7748361866954644541" datatype="html">
+        <source>Gästebuchbenutzer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user-list/user-list.component.html</context>
+          <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
     </body>
