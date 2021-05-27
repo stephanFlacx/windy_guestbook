@@ -8,8 +8,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {GuestbookTileComponent} from './guestbook-tile/guestbook-tile.component';
-
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import {GuestbookTileComponent} from './guestbook-tile/guestbook-tile.component'
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTooltipModule
   ]
 })
 export class GuestbookOverviewModule { }

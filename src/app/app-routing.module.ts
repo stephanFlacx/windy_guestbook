@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'detail/:detailId', loadChildren: () => import('./guestbook-detail/guestbook-detail.module')
       .then(m => m.GuestbookDetailModule)},
   {path: 'login', component: LoginComponent},
-  {path: 'newEntry', component: MakeGuestbookEntryComponent, canActivate: [AuthGuard]},
+  {path: 'newEntry', component: MakeGuestbookEntryComponent},
   {path: 'userList', component: UserListComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: 'overview'}
 ];

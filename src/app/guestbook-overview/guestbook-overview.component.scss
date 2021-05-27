@@ -16,13 +16,18 @@
   }
 }
 
-
-div {
+.single-card{
   cursor: pointer;
+}
+
+.button-above-group {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 80px 80px;
+  margin-bottom: 20px;
 }
 
 .add-button{
   background-color: #2196F3;
-  font-size: xx-large;
 }
 

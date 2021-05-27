@@ -1,6 +1,5 @@
 <mat-card class="comment-card">
   <mat-card-content class="comment-card-content">
-    <div *ngIf="(authService.loggedInUserName$ | async)" >
       <form [formGroup]="form" class="form-group">
           <mat-form-field>
               <mat-label>Name</mat-label>
@@ -14,9 +13,5 @@
           </mat-form-field>
       </form>
       <button i18n mat-stroked-button (click)="publishComment()" [disabled]="form.invalid">Post</button>
-    </div>
-    <div *ngIf="!(authService.loggedInUserName$ | async)">
-      Login to add a comment
-    </div>
   </mat-card-content>
 </mat-card>

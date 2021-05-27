@@ -21,10 +21,9 @@ export class LayoutService {
             Breakpoints.Large,
             Breakpoints.XLarge
         ]).subscribe(result => {
-            console.log(result.breakpoints);
-            if (result.breakpoints[Breakpoints.XSmall]) {
+            if (result.breakpoints[Breakpoints.XSmall] || result.breakpoints[Breakpoints.Small]) {
                 this.layoutSubject$.next(Layout.phone);
-            } else if (result.breakpoints[Breakpoints.Small] || result.breakpoints[Breakpoints.Medium]) {
+            } else if (result.breakpoints[Breakpoints.Medium]) {
                 this.layoutSubject$.next(Layout.tablet);
             } else if (result.breakpoints[Breakpoints.Large] || result.breakpoints[Breakpoints.XLarge]) {
                 this.layoutSubject$.next(Layout.desktop);

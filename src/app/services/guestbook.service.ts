@@ -27,8 +27,7 @@ export class GuestbookService {
   }
 
   public postGuestbookEntry(entry: GuestbookPostNewEntryModel): Observable<void> {
-      const headers = this.authService.getSessionTokenHeader();
-      return this.http.post<void>('/posts', entry, {headers});
+      return this.http.post<void>('/posts', entry);
   }
 
   public deleteGuestbookEntry(id: string): Observable<void> {
@@ -37,8 +36,7 @@ export class GuestbookService {
   }
 
   public postGuestbookComment(id: string, comment: GuestbookCommentModel): Observable<void> {
-      const headers = this.authService.getSessionTokenHeader();
-      return this.http.post<void>(`posts/${id}/comments`, comment, {headers});
+      return this.http.post<void>(`posts/${id}/comments`, comment);
   }
 
   public putClap(id: string, claps: GuestbookClaps): Observable<void> {

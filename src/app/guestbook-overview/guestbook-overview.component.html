@@ -1,14 +1,18 @@
 <div class="common-layout">
-  <div class="side-bar">
-    <button mat-fab class="add-button"[routerLink]="'/newEntry'">
-      <img src="assets/post-add-icon.svg">
-    </button>
-    <button mat-fab class="add-button"[routerLink]="'/userList'">
-      <img src="assets/users-icon.svg">
-    </button>
+  <div class="side-bar" *ngIf="!buttonsAbove">
+    <ng-template
+      [ngTemplateOutlet]="button_group"
+      [ngTemplateOutletContext]="{pos_1:'above', pos_2:'below'}">
+    </ng-template>
   </div>
 
   <div class="content">
+    <div class="button-above-group" *ngIf="buttonsAbove">
+      <ng-template
+        [ngTemplateOutlet]="button_group"
+        [ngTemplateOutletContext]="{pos_1:'left', pos_2:'right'}">
+      </ng-template>
+    </div>
     <div class="card-holder">
         <div class="single-card" *ngFor="let guestbookEntry of guestbookEntries" [routerLink]="'/detail/' + guestbookEntry.id">
             <app-guestbook-tile (entryDeleted)='ngOnInit()' [guestbookEntryPass]="guestbookEntry" [detailIdPass]="guestbookEntry.id + ''"></app-guestbook-tile>
@@ -17,5 +21,13 @@
   </div>
 </div>
 
-
-
+<ng-template #button_group let-pos_1="pos_1" let-pos_2="pos_2">
+  <button i18n mat-fab matTooltip="Make a new guestbook entry" [matTooltipPosition]="pos_1"
+          class="add-button"[routerLink]="'/newEntry'">
+    <img src="assets/post-add-icon.svg">
+  </button>
+  <button i18n mat-fab matTooltip="Show all registered users" [matTooltipPosition]="pos_2"
+          class="add-button"[routerLink]="'/userList'">
+    <img src="assets/users-icon.svg">
+  </button>
+</ng-template>

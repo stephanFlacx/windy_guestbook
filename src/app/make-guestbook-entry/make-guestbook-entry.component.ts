@@ -20,8 +20,7 @@ export class MakeGuestbookEntryComponent implements OnInit {
         });
 
     messageForm = new FormControl('', {
-            validators: [Validators.required, Validators.minLength(15)],
-            updateOn: 'blur'});
+            validators: [Validators.required, Validators.minLength(15)]});
 
     public form: FormGroup = this.fb.group({
         [this.formConstants.author]: this.authorForm,
@@ -31,6 +30,7 @@ export class MakeGuestbookEntryComponent implements OnInit {
     constructor(
         private readonly fb: FormBuilder,
         private readonly guestbookService: GuestbookService,
+        private readonly router: Router,
     ) {
     }
 
@@ -39,6 +39,8 @@ export class MakeGuestbookEntryComponent implements OnInit {
     }
 
     publishEntry(): void {
-        this.guestbookService.postGuestbookEntry(this.form.value).subscribe();
+        this.guestbookService.postGuestbookEntry(this.form.value).subscribe(
+          () => this.router.navigate(['/'])
+        );
     }
 }

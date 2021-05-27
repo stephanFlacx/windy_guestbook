@@ -2,8 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {GuestbookService} from '../../services/guestbook.service';
 import {Router} from '@angular/router';
-import {AuthenticationService} from '../../services/authentication.service';
-
 
 
 @Component({
@@ -19,7 +17,7 @@ export class AddCommentComponent implements OnInit {
     public readonly formConstants = {
         author: 'author',
         comment: 'comment'
-    }
+    };
 
     authorForm = new FormControl(  '', {
             validators: [Validators.required, Validators.minLength(3)],
@@ -27,16 +25,9 @@ export class AddCommentComponent implements OnInit {
         });
 
     commentForm = new FormControl('', {
-            validators: [Validators.required, Validators.minLength(15)],
-            updateOn: 'blur'});
+            validators: [Validators.required, Validators.minLength(15)]});
 
     public form: FormGroup = this.fb.group({
-        // [this.formConstants.author]: ['', {
-        //     validators: [Validators.required, Validators.minLength(3)],
-        //     // asyncValidators: blogTitleValidator(this.guestbookService),
-        //     updateOn: 'blur'
-        // }],
-        // [this.formConstants.comment]: ['', Validators.required]
         [this.formConstants.author]: this.authorForm,
         [this.formConstants.comment]: this.commentForm
     });
@@ -45,7 +36,6 @@ export class AddCommentComponent implements OnInit {
         private readonly fb: FormBuilder,
         private readonly guestbookService: GuestbookService,
         private readonly router: Router,
-        public readonly authService: AuthenticationService
     ) {
     }
 
