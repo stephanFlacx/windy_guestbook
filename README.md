@@ -1,5 +1,7 @@
 # WindyGuestbook
 
+This is a project for a small single page application. It is a guestbook which has on overview, detail page and a login. The data is fetched from a third party REST.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
 ## Development server
